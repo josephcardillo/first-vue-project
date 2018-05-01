@@ -11,8 +11,15 @@
 
   <div id="app">
     <input type="text" v-on:input="changeTitle">
+    <!-- Using v-once, all content is rendered once -->
+    <h1 v-once>{{ title }}</h1>
     <p>{{ title }}</p>
-    <p>{{ sayHello() }}</p>
+    <!-- v-bind allows us to call links from the Vue object
+  v-bind is a directive. Takes an argument. Expects the attribute you want to bind -->
+    <p>{{ sayHello() }} -  <a v-bind:href="link">Google</a></p>
+    <hr>
+    <!-- v-html tells vue to render html code and not escape it. Use carefully because it exposes you to cross site scripting attacks if it's content created by users. If source is clean or you sanitized it on your own, this should be fine. -->
+    <p v-html="finishedLink"></p>
   </div>
 
   <script src="./script.js"></script>
