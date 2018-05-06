@@ -1,4 +1,15 @@
 new Vue({
+  el: '#app3',
+  data: {
+    ingredients: ['meat', 'fruit', 'cookies'],
+    persons: [
+      {name: 'Joe', age: 33, color: 'green'},
+      {name: 'John', age: 55, color: 'blue'}
+    ]
+  }
+});
+
+new Vue({
   el: '#app2',
   data: {
     show: true

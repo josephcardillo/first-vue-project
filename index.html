@@ -13,6 +13,21 @@
   <!-- For events v-on: can be replaced with @ -->
   <!-- for v-bind, can just use : -->
 
+  <div id="app3">
+    <ul>
+      <!-- value, index -->
+      <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
+    </ul>
+    <template v-for="(ingredient, index) in ingredients">
+      <h1>{{ ingredient }}</h1>
+      <p>{{ index }}</p>
+    </template>
+
+    <ul>
+      <li v-for="person in persons">Name: {{ person.name }} | Age: {{ person.age }} | Favorite Color: {{ person.color}}</li>
+    </ul>
+  </div>
+
   <div id="app2">
     <!-- v-if doesn't just hide, it completely removes the element as you can see if you inspect the DOM -->
     <!-- This can remove the element and all its nested elements -->
