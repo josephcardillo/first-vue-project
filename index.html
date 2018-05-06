@@ -28,7 +28,8 @@
       <h1>What happened?</h1>
       <p>Yo!</p>
     </template>
-    <p>Do you also see me?</p>
+    <!-- to just use style="display:none" -->
+    <p v-show="show">Do you also see me?</p>
     <button @click="show = !show">Toggle show/hide</button>
   </div>
 
