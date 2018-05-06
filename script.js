@@ -1,5 +1,6 @@
 new Vue({
   el: '#app',
+  // data is not reactive
   data: {
     title: 'Hello World!',
     link: 'http://google.com',
@@ -7,6 +8,7 @@ new Vue({
     counter1: 0,
     counter2: 0,
     counter3: 0,
+    counter4: 0,
     x: 0,
     y: 0,
     name: 'Joe'
@@ -25,6 +27,17 @@ new Vue({
     },
     increase2: function(event) {
       this.counter2 += event;
+    },
+    // increase4: function() {
+    //   this.counter4++;
+    //   this.result4 = this.counter4 > 5 ? 'Greater 5' : 'Smaller 5';
+    // },
+    // decrease4: function() {
+    //   this.counter4--;
+    //   this.result4 = this.counter4 > 5 ? 'Greater 5' : 'Smaller 5';
+    // },
+    result4() {
+      return this.counter4 > 5 ? 'Greater than 5' : 'Smaller than 5';
     },
     updateCoordinates: function(event) {
       this.x = event.clientX;

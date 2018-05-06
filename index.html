@@ -47,6 +47,13 @@
     <h2>Two way data binding</h2>
     <input type="text" v-model="name">
     <p>{{ name }}</p>
+    <hr>
+    <h1>Reacting to changes with computed properties</h1>
+    <!-- In order to DRY, Vue makes it easy to model cross property dependencies -->
+    <button v-on:click="counter4++">Increase</button>
+    <button v-on:click="counter4--">Decrease</button>
+    <p>Counter: {{ counter4 }}</p>
+    <p>Result: {{ result4() }}</p>
   </div>
 
   <script src="./script.js"></script>
