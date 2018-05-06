@@ -25,6 +25,8 @@
     <!-- Can use any DOM event existent for a button: mouseenter, mouseleave, etc. -->
     <button v-on:click="increase">Click me</button>
     <p>{{ counter }}</p>
+    <!-- if we want to access this information because we want to output the data... -->
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
   </div>
 
   <script src="./script.js"></script>
