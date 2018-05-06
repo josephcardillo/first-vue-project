@@ -20,6 +20,11 @@
     <hr>
     <!-- v-html tells vue to render html code and not escape it. Use carefully because it exposes you to cross site scripting attacks if it's content created by users. If source is clean or you sanitized it on your own, this should be fine. -->
     <p v-html="finishedLink"></p>
+    <hr>
+    <!-- v-on: is a way of listening to something -->
+    <!-- Can use any DOM event existent for a button: mouseenter, mouseleave, etc. -->
+    <button v-on:click="increase">Click me</button>
+    <p>{{ counter }}</p>
   </div>
 
   <script src="./script.js"></script>
