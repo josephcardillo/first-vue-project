@@ -34,8 +34,8 @@
     </div>
     <div
       class="demo"
-      @click="attachBlue = !attachBlue"
-      :class="{blue: attachBlue}">
+      @click="attachOrange = !attachOrange"
+      :class="[color1, {orange: attachOrange}]">
       <!-- v-on: is a way of listening to something -->
       <!-- Can use any DOM event existent for a button: mouseenter, mouseleave, etc. -->
       <h2>Event modifiers</h2>
@@ -43,6 +43,9 @@
       <button v-on:click="increase1(2)">Click me</button>
       <p>{{ counter1 }}</p>
     </div>
+    <h2>Type 'blue', 'red', or 'green'</h2>
+    <input type="text" v-model="color1">
+    <hr>
     <div class="demo">
       <h3>Passing $event</h3>
       <button v-on:click="increase2($event)">Click me</button>
@@ -61,10 +64,18 @@
       </p>
     </div>
       <!-- Key modifiers. Adding ".enter" will only call this function when enter is pressed and raised. These key modifiers can be chained together, such as enter.space -->
-    <div class="demo">
-      <h2>v-on:keyup.enter</h2>
+    <div
+      class="demo"
+      :style="myStyle">
+      <h2>Alert box on 'enter'</h2>
       <input type="text" v-on:keyup.enter="alertMe"><br>
     </div>
+    <br>
+    <h2>Type a color. Any color.</h2>
+    <input type="text" v-model="color2">
+    <h2>Add custom width:</h2>
+    <input type="text" v-model="width">
+    <br>
       <!-- Two way binding. v-model says "set up two way data binding" -->
     <div class="demo">
       <h2>Two way data binding</h2>

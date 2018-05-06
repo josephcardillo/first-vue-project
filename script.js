@@ -15,7 +15,11 @@ new Vue({
     name: 'Joe',
     attachRed: false,
     attachGreen: false,
-    attachBlue: false
+    attachBlue: false,
+    attachOrange: false,
+    color1: 'green',
+    color2: 'pink',
+    width: 200
   },
   // for running synchronous tasks:
   computed: {
@@ -28,6 +32,12 @@ new Vue({
       return {
         red: this.attachRed,
         blue: !this.attachRed,
+      };
+    },
+    myStyle: function() {
+      return {
+        backgroundColor: this.color2,
+        width: this.width + 'px'
       };
     }
   },
