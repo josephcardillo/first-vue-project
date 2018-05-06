@@ -16,17 +16,37 @@
     <p>{{ title }}</p>
     <!-- v-bind allows us to call links from the Vue object
   v-bind is a directive. Takes an argument. Expects the attribute you want to bind -->
-    <p>{{ sayHello() }} -  <a v-bind:href="link">Google</a></p>
+    <!-- <p>{{ sayHello() }} -  <a v-bind:href="link">Google</a></p> -->
     <hr>
     <!-- v-html tells vue to render html code and not escape it. Use carefully because it exposes you to cross site scripting attacks if it's content created by users. If source is clean or you sanitized it on your own, this should be fine. -->
     <p v-html="finishedLink"></p>
     <hr>
     <!-- v-on: is a way of listening to something -->
     <!-- Can use any DOM event existent for a button: mouseenter, mouseleave, etc. -->
-    <button v-on:click="increase(2, $event)">Click me</button>
-    <p>{{ counter }}</p>
+    <h2>Event modifiers</h2>
+    <h3>Passing 'step'</h3>
+    <button v-on:click="increase1(2)">Click me</button>
+    <p>{{ counter1 }}</p>
+    <h3>Passing $event</h3>
+    <button v-on:click="increase2($event)">Click me</button>
+    <p>{{ counter2 }}</p>
+    <!-- can also write JavaScript in templates -->
+    <h3>Writing simple JS into template</h3>
+    <button v-on:click="counter3++">Click me</button>
+    <p>{{ counter3 * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
     <!-- if we want to access this information because we want to output the data... -->
-    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+    <p v-on:mousemove="updateCoordinates">
+      Coordinates: {{ x }} / {{ y }}
+      <!-- stop and preventDefault are modifiers. Modifiers can be chained together as well. -->
+      - <span v-on:mousemove.stop="">DEAD SPOT</span>
+    </p>
+    <!-- Key modifiers. Adding ".enter" will only call this function when enter is pressed and raised. These key modifiers can be chained together, such as enter.space -->
+    <h2>v-on:keyup.enter</h2>
+    <input type="text" v-on:keyup.enter="alertMe"><br>
+    <!-- Two way binding. v-model says "set up two way data binding" -->
+    <h2>Two way data binding</h2>
+    <input type="text" v-model="name">
+    <p>{{ name }}</p>
   </div>
 
   <script src="./script.js"></script>

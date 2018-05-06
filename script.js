@@ -4,25 +4,39 @@ new Vue({
     title: 'Hello World!',
     link: 'http://google.com',
     finishedLink: '<a href="http://google.com">Google</a>',
-    counter: 0,
+    counter1: 0,
+    counter2: 0,
+    counter3: 0,
     x: 0,
-    y: 0
+    y: 0,
+    name: 'Joe'
   },
   methods: {
     changeTitle: function(event) {
       // this calls the data object
       this.title = event.target.value;
     },
-    sayHello: function() {
-      this.title = 'Hello!';
-      return this.title;
+    // sayHello: function() {
+    //   this.title = 'Hello!';
+    //   return this.title;
+    // },
+    increase1: function(step) {
+      this.counter1 += step;
     },
-    increase: function(step, event) {
-      this.counter += step;
+    increase2: function(event) {
+      this.counter2 += event;
     },
     updateCoordinates: function(event) {
       this.x = event.clientX;
       this.y = event.clientY;
+    },
+    // dummy: function(event) {
+    //   // To make sure that this does not propagate up to elements holding this element, you can use:
+    //   event.stopPropagation();
+    //   // ...but you can also use v-on:mousemove.stop in the span, and remove the function altogether.
+    // }
+    alertMe: function() {
+      alert('Hi!');
     }
   }
 });
