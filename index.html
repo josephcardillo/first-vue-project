@@ -16,7 +16,7 @@
     <div
       class="demo"
       @click="attachRed = !attachRed"
-      :class="{red: attachRed}">
+      :class="divClasses">
       <input type="text" v-on:input="changeTitle">
       <!-- Using v-once, all content is rendered once -->
       <h1 v-once>{{ title }}</h1>

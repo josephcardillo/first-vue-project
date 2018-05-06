@@ -23,6 +23,12 @@ new Vue({
     output4: function() {
       // console.log('computed')
       return this.secondCounter4 > 5 ? 'Greater than 5' : 'Smaller than 5';
+    },
+    divClasses: function() {
+      return {
+        red: this.attachRed,
+        blue: !this.attachRed,
+      };
     }
   },
   // for running asynchronous tasks:
