@@ -12,7 +12,10 @@ new Vue({
     secondCounter4: 0,
     x: 0,
     y: 0,
-    name: 'Joe'
+    name: 'Joe',
+    attachRed: false,
+    attachGreen: false,
+    attachBlue: false
   },
   // for running synchronous tasks:
   computed: {
