@@ -1,4 +1,11 @@
 new Vue({
+  el: '#app2',
+  data: {
+    show: true
+  }
+});
+
+new Vue({
   el: '#app',
   // data is not reactive
   data: {

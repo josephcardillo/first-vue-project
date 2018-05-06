@@ -12,6 +12,26 @@
   <!-- Shorthand options -->
   <!-- For events v-on: can be replaced with @ -->
   <!-- for v-bind, can just use : -->
+
+  <div id="app2">
+    <!-- v-if doesn't just hide, it completely removes the element as you can see if you inspect the DOM -->
+    <!-- This can remove the element and all its nested elements -->
+    <!-- version 2.1 > else-if -->
+    <p v-if="show">You can see me!</p>
+    <!-- if either or decision -->
+    <p v-else>Now you see me!</p>
+    <template v-if="show">
+      <h1>Heading</h1>
+      <p>Inside a template</p>
+    </template>
+    <template v-else>
+      <h1>What happened?</h1>
+      <p>Yo!</p>
+    </template>
+    <p>Do you also see me?</p>
+    <button @click="show = !show">Toggle show/hide</button>
+  </div>
+
   <div id="app">
     <div
       class="demo"
